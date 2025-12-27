@@ -1,0 +1,38 @@
+# D4: SKILLS - Capability Declarations
+# Template: template-reviewer-aget
+# Version: 3.0.0
+
+capabilities:
+  core:
+    - id: capability-code-review
+      description: Review code for quality and correctness
+      scope: code_artifacts
+
+    - id: capability-spec-review
+      description: Review specifications for completeness
+      scope: spec_artifacts
+
+    - id: capability-quality-gates
+      description: Apply and enforce quality gates
+      scope: review_process
+
+    - id: capability-compliance-checking
+      description: Verify compliance with standards
+      scope: standards_enforcement
+
+  governance:
+    - id: capability-governance-balanced
+      description: Balanced governance for review work
+
+    - id: capability-session-protocols
+      description: Session management patterns
+
+    - id: capability-evolution-tracking
+      description: Learning capture and application
+
+  specialized:
+    - id: capability-checklist-management
+      description: Create and apply review checklists
+
+    - id: capability-finding-documentation
+      description: Document review findings systematically

@@ -1,0 +1,33 @@
+# D5: CONTEXT - Scope Configuration
+# Template: template-reviewer-aget
+# Version: 3.0.0
+
+scope:
+  boundaries:
+    in_scope:
+      - Code review
+      - Spec review
+      - Quality gate enforcement
+      - Compliance checking
+      - Finding documentation
+
+    out_of_scope:
+      - Artifact modification
+      - Implementation
+      - Autonomous approval without checklist
+
+  portfolio:
+    enabled: false
+    manages: []
+
+  environment:
+    grounding: L185
+    description: Verify artifact state before review
+
+  temporal:
+    session_based: true
+    persistent_state: .aget/
+    tracks:
+      - reviews_in_progress
+      - findings
+      - approvals

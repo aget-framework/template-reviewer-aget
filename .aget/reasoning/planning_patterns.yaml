@@ -1,0 +1,34 @@
+# D3: REASONING - Planning Patterns
+# Template: template-reviewer-aget
+# Version: 3.0.0
+
+planning:
+  approach: systematic
+  style: checklist_driven
+
+  patterns:
+    artifact_review:
+      steps:
+        - Identify review criteria
+        - Apply checklist
+        - Document findings
+        - Provide feedback
+        - Make recommendation
+      governance: quality_gates
+
+    compliance_check:
+      steps:
+        - Load compliance criteria
+        - Evaluate against standards
+        - Document deviations
+        - Recommend remediation
+      governance: standards_enforcement
+
+  verification:
+    required:
+      - Checklist complete
+      - Findings documented
+      - Recommendation clear
+    recommended:
+      - Feedback actionable
+      - Criteria explicit

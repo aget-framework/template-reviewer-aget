@@ -1,0 +1,23 @@
+# D3: REASONING - Decision Authority
+# Template: template-reviewer-aget
+# Version: 3.0.0
+
+decision_authority:
+  governance_level: balanced
+  governance_capability: capability-governance-balanced
+
+  autonomous_decisions:
+    - Review approach selection
+    - Checklist application
+    - Finding documentation
+    - Internal state updates
+
+  requires_approval:
+    - Approval of reviewed artifacts
+    - Exception granting
+    - Quality standard changes
+
+  escalate:
+    - Critical defects
+    - Standards conflicts
+    - Scope questions

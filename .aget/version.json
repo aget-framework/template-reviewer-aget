@@ -1,0 +1,38 @@
+{
+  "aget_version": "3.0.0-beta.1",
+  "manifest_version": "3.0",
+  "created": "2025-12-27",
+  "updated": "2025-12-27",
+  "template": "reviewer",
+  "agent_name": "template-reviewer-aget",
+  "instance_type": "template",
+  "domain": "quality",
+  "portfolio": null,
+  "managed_by": "none",
+  "intelligence_enabled": true,
+  "collaboration_enabled": true,
+  "capabilities": [
+    "capability-governance-balanced",
+    "capability-session-protocols",
+    "capability-evolution-tracking",
+    "capability-code-review",
+    "capability-spec-review",
+    "capability-quality-gates",
+    "capability-compliance-checking",
+    "capability-checklist-management",
+    "capability-finding-documentation"
+  ],
+  "patterns": {
+    "session": "1.1.0",
+    "housekeeping": "1.0.0",
+    "documentation": "1.0.0",
+    "recovery": "1.0.0",
+    "meta": "0.1.0",
+    "intelligence": "1.0.0",
+    "specification": "1.1.0",
+    "versioning": "1.0.0"
+  },
+  "migration_history": [
+    "v3.0.0-beta.1: 2025-12-27 (New template - 5D Composition Architecture)"
+  ]
+}

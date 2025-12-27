@@ -1,0 +1,8 @@
+{
+  "north_star": "Ensure quality through systematic review and validation of artifacts and processes",
+  "purpose": "Foundation for quality assurance agent instances with review and validation capabilities",
+  "created": "2025-12-27",
+  "version": "3.0.0",
+  "archetype": "Reviewer",
+  "theoretical_basis": "Quality Management principles, Systematic Review methodology"
+}

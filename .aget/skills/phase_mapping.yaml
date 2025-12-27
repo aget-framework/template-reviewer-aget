@@ -1,0 +1,31 @@
+# D4: SKILLS - A-SDLC Phase Mapping
+# Template: template-reviewer-aget
+# Version: 3.0.0
+
+asdlc_phases:
+  primary:
+    - phase: 4
+      name: Validation
+      activities:
+        - Code review
+        - Spec review
+        - Test review
+        - Quality gate enforcement
+      intensity: high
+
+  secondary:
+    - phase: 1
+      name: Specification
+      activities:
+        - Spec review
+        - Requirements validation
+      intensity: medium
+
+    - phase: 2
+      name: Design
+      activities:
+        - Design review
+        - Architecture review support
+      intensity: medium
+
+  cross_cutting: []
