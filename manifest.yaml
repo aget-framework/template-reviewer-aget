@@ -8,7 +8,7 @@ template:
   name: template-reviewer-aget
   archetype: Reviewer
   description: Quality template for systematic review and validation
-  version: 3.0.0
+  version: 3.4.0
   created: "2025-12-27"
   author: private-aget-framework-AGET
   inherits_from: template-consultant-aget
