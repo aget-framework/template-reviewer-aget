@@ -1,83 +1,128 @@
-# AGET Reviewer Template
+# Template: Reviewer Agent
 
-> **Quality assurance and review template**
+> Ensure quality through systematic artifact review and structured feedback
 
-Part of the [AGET Framework](https://github.com/aget-framework) v3.5.0.
+**Version**: v3.5.0 | **Archetype**: Reviewer | **Skills**: 2 specialized + 13 universal
 
-## Archetype
+---
 
-**Reviewer** - Ensure quality through systematic review and validation.
+## Why Reviewer?
 
-- **Extends**: consultant
-- **Governance**: Balanced
-- **Primary A-SDLC Phases**: 4 (Validation)
+The Reviewer archetype enforces **quality through systematic review**. Unlike casual feedback, reviewer agents provide:
 
-## Key Capabilities
+- **Artifact review** — Evaluate documents, code, and designs against standards
+- **Structured feedback** — Categorize findings by severity and actionability
+- **Quality gates** — Ensure artifacts meet defined criteria before progression
 
-- Code review and feedback
-- Specification review and validation
-- Quality gate enforcement
-- Compliance checking
+**For evaluators**: If you need an AI that can review work products systematically and provide professional-grade feedback, the Reviewer archetype brings QA discipline to your workflow.
 
-## Inviolable
+---
 
-```
-INV-REV-001: shall NOT approve Artifact WITHOUT Completing_Review_Checklist
-```
+## Skills
+
+Reviewer agents come with **2 archetype-specific skills** plus 13 universal AGET skills.
+
+### Archetype Skills
+
+| Skill | Description |
+|-------|-------------|
+| **aget-review-artifact** | Review artifacts against defined criteria. Produces structured assessment with pass/fail determinations. |
+| **aget-provide-feedback** | Provide categorized feedback (blocking, suggestion, nitpick) with clear rationale and improvement paths. |
+
+### Universal Skills
+
+All AGET agents include session management, knowledge capture, and health monitoring:
+
+- `aget-wake-up` / `aget-wind-down` — Session lifecycle
+- `aget-create-project` / `aget-review-project` — Project management
+- `aget-record-lesson` / `aget-capture-observation` — Learning capture
+- `aget-check-health` / `aget-check-kb` / `aget-check-evolution` — Health monitoring
+- `aget-propose-skill` / `aget-create-skill` — Skill development
+- `aget-save-state` / `aget-file-issue` — State and issue management
+
+---
+
+## Ontology
+
+Reviewer agents use a **formal vocabulary** of 6 concepts organized into 2 clusters:
+
+| Cluster | Concepts |
+|---------|----------|
+| **Review Process** | Review, Artifact, Criteria |
+| **Feedback** | Finding, Severity, Resolution |
+
+This vocabulary enables precise communication about quality assurance.
+
+See: [`ontology/ONTOLOGY_reviewer.yaml`](ontology/ONTOLOGY_reviewer.yaml)
+
+---
 
 ## Quick Start
 
-1. Clone this template
-2. Run instantiation script (see [Getting Started](docs/GETTING_STARTED.md))
-3. Configure for your review domain
+```bash
+# 1. Clone the template
+git clone https://github.com/aget-framework/template-reviewer-aget.git my-reviewer-agent
+cd my-reviewer-agent
+
+# 2. Configure identity
+# Edit .aget/version.json:
+#   "agent_name": "my-reviewer-agent"
+#   "domain": "your-domain"
+
+# 3. Verify setup
+python3 -m pytest tests/ -v
+# Expected: All tests passing
+```
+
+### Try the Skills
+
+```bash
+# In Claude Code CLI
+/aget-review-artifact    # Review a document or code
+/aget-provide-feedback   # Give structured feedback
+```
 
 ---
 
-## Specification
+## What Makes Reviewer Different
+
+| Aspect | Casual Comments | Reviewer Agent |
+|--------|----------------|----------------|
+| **Review** | Informal opinions | Criteria-based assessment |
+| **Feedback** | Mixed priorities | Categorized by severity |
+| **Quality gates** | Subjective feel | Pass/fail determination |
+| **Tracking** | Lost in conversation | Documented findings |
+
+---
+
+## Framework Specification
 
 | Attribute | Value |
 |-----------|-------|
-| **Governed By** | [AGET_TEMPLATE_SPEC v3.1](https://github.com/aget-framework/aget/blob/main/specs/AGET_TEMPLATE_SPEC.md) |
-| **Foundation** | [WORKER_TEMPLATE_SPEC v1.0](https://github.com/aget-framework/aget/blob/main/specs/WORKER_TEMPLATE_SPEC_v1.0.yaml) |
+| **Framework** | [AGET v3.5.0](https://github.com/aget-framework/aget) |
 | **Archetype** | Reviewer |
-| **Extends** | Consultant |
-| **Manifest Version** | 3.0 |
-| **Contract Tests** | 8 tests |
-
-### Key Capabilities
-
-| ID | Capability | Pattern |
-|----|------------|---------|
-| CAP-001 | Wake Protocol | event-driven |
-| CAP-009 | Wind Down Protocol | event-driven |
-| CAP-020 | Version Configuration | ubiquitous |
-| CAP-028 | Project Plan Pattern | event-driven |
-
-Validate compliance: `pytest tests/ -v`
-
-See: [Full specification](https://github.com/aget-framework/aget/tree/main/specs)
+| **Skills** | 15 total (2 archetype + 13 universal) |
+| **Ontology** | 6 concepts, 2 clusters |
+| **License** | Apache 2.0 |
 
 ---
 
-## Structure
+## Learn More
 
-```
-template-reviewer-aget/
-├── manifest.yaml          # Template configuration
-├── governance/            # Charter, Mission, Scope
-├── tests/                 # Contract tests
-└── .aget/                 # 5D Composition Architecture
-    ├── persona/           # D1: Identity
-    ├── memory/            # D2: Knowledge
-    ├── reasoning/         # D3: Decision-making
-    ├── skills/            # D4: Capabilities
-    └── context/           # D5: Relationships
-```
-
-## License
-
-Apache License 2.0 - See [LICENSE](LICENSE)
+- **[AGET Framework](https://github.com/aget-framework/aget)** — Core framework documentation
+- **[Archetype Guide](https://github.com/aget-framework/aget/blob/main/docs/ARCHETYPE_GUIDE.md)** — All 12 archetypes explained
+- **[Getting Started](https://github.com/aget-framework/aget/blob/main/docs/GETTING_STARTED.md)** — Full onboarding guide
 
 ---
 
-*AGET Framework - AI discovers patterns, you describe intent*
+## Related Archetypes
+
+| Archetype | Best For |
+|-----------|----------|
+| **[Developer](https://github.com/aget-framework/template-developer-aget)** | Code review (PR-specific) |
+| **[Spec-Engineer](https://github.com/aget-framework/template-spec-engineer-aget)** | Requirements validation |
+| **[Consultant](https://github.com/aget-framework/template-consultant-aget)** | Solution assessment |
+
+---
+
+**AGET Framework** | Apache 2.0 | [Issues](https://github.com/aget-framework/template-reviewer-aget/issues)
