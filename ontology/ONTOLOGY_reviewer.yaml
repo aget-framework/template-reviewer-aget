@@ -1,0 +1,285 @@
+# ONTOLOGY: Reviewer Archetype v1.0
+# SKOS-aligned concept definitions for artifact review and feedback delivery
+#
+# Archetype: reviewer
+# Created: 2026-02-14
+# Author: private-aget-framework-AGET
+# Format: SKOS-inspired YAML (aget-framework convention)
+# Concepts: 7
+# Project: ARC-001 (Archetype Customization v3.5)
+
+apiVersion: aget.framework/v1
+kind: OntologySpec
+metadata:
+  name: reviewer-archetype-ontology
+  version: 1.0.0
+  created: 2026-02-14
+  author: private-aget-framework-AGET
+  archetype: reviewer
+  description: >
+    Formal vocabulary for reviewer archetype agents. Defines concepts for
+    artifact review, feedback delivery, and approval workflows.
+  extends: ONTOLOGY_personal_ai_systems_v1.0.yaml
+
+# ============================================================================
+# CONCEPT SCHEME
+# ============================================================================
+
+conceptScheme:
+  uri: aget:ontology/reviewer
+  prefLabel: Reviewer Archetype Ontology
+  definition: >
+    A vocabulary for describing reviewer agent capabilities including
+    artifact examination, feedback formulation, and approval decisions.
+  hasTopConcept:
+    - aget:archetype/reviewer/Review
+    - aget:archetype/reviewer/Feedback
+    - aget:archetype/reviewer/Approval
+  relatedScheme:
+    - aget:ontology/personal-ai-systems
+
+# ============================================================================
+# CONCEPTS
+# ============================================================================
+
+concepts:
+
+  # --------------------------------------------------------------------------
+  # Concept: Review
+  # --------------------------------------------------------------------------
+  - id: REV-001
+    uri: aget:archetype/reviewer/Review
+    prefLabel: Review
+    altLabel:
+      - Examination
+      - Assessment
+      - Evaluation
+    definition: >
+      A systematic examination of an artifact against criteria to
+      identify issues, improvements, and compliance.
+    scopeNote: >
+      Review types: peer review, technical review, management review.
+      Reviews are quality gates in workflows.
+    theoreticalBasis:
+      primary: Peer Review
+      source: Software Engineering
+      reference: https://en.wikipedia.org/wiki/Software_peer_review
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/reviewer/Artifact
+      - aget:archetype/reviewer/Criteria
+      - aget:archetype/reviewer/Feedback
+    enumValues:
+      - Draft       # Initial review
+      - In_Progress # Review ongoing
+      - Complete    # Review finished
+    inScheme: aget:ontology/reviewer
+    cluster: Review Process
+
+  # --------------------------------------------------------------------------
+  # Concept: Artifact
+  # --------------------------------------------------------------------------
+  - id: REV-002
+    uri: aget:archetype/reviewer/Artifact
+    prefLabel: Artifact
+    altLabel:
+      - Deliverable
+      - Work_Product
+      - Document
+    definition: >
+      The item being reviewed: code, documentation, design, plan,
+      or other work product.
+    scopeNote: >
+      Artifact characteristics affect review approach. Code requires
+      different review than documentation.
+    theoreticalBasis:
+      primary: Work Products
+      source: IEEE Standards
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/reviewer/Review
+    inScheme: aget:ontology/reviewer
+    cluster: Review Process
+
+  # --------------------------------------------------------------------------
+  # Concept: Criteria
+  # --------------------------------------------------------------------------
+  - id: REV-003
+    uri: aget:archetype/reviewer/Criteria
+    prefLabel: Criteria
+    altLabel:
+      - Review_Criteria
+      - Standards
+      - Checklist
+    definition: >
+      The standards or questions against which an artifact is
+      evaluated during review.
+    scopeNote: >
+      Explicit criteria improve review consistency. Criteria may be
+      formal (checklist) or informal (best practices).
+    theoreticalBasis:
+      primary: Evaluation Criteria
+      source: Quality Assurance
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/reviewer/Review
+      - aget:archetype/reviewer/Approval
+    inScheme: aget:ontology/reviewer
+    cluster: Review Process
+
+  # --------------------------------------------------------------------------
+  # Concept: Feedback
+  # --------------------------------------------------------------------------
+  - id: REV-004
+    uri: aget:archetype/reviewer/Feedback
+    prefLabel: Feedback
+    altLabel:
+      - Comment
+      - Suggestion
+      - Critique
+    definition: >
+      Information provided to the artifact creator about issues,
+      improvements, or observations from review.
+    scopeNote: >
+      Effective feedback is specific, actionable, and constructive.
+      Feedback severity: blocking, suggestion, nitpick.
+    theoreticalBasis:
+      primary: Constructive Feedback
+      source: Communication Theory
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/reviewer/Review
+      - aget:archetype/reviewer/Issue
+    enumValues:
+      - Blocking     # Must fix before approval
+      - Suggestion   # Should consider
+      - Nitpick      # Minor observation
+      - Praise       # Positive feedback
+    inScheme: aget:ontology/reviewer
+    cluster: Feedback Delivery
+
+  # --------------------------------------------------------------------------
+  # Concept: Issue
+  # --------------------------------------------------------------------------
+  - id: REV-005
+    uri: aget:archetype/reviewer/Issue
+    prefLabel: Issue
+    altLabel:
+      - Finding
+      - Problem
+      - Defect
+    definition: >
+      A specific problem identified during review that requires
+      attention or resolution.
+    scopeNote: >
+      Issues should be clearly described with location and suggested
+      resolution. Severity guides prioritization.
+    theoreticalBasis:
+      primary: Defect Classification
+      source: Quality Management
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/reviewer/Feedback
+      - aget:archetype/reviewer/Review
+    enumValues:
+      - Critical    # Blocks approval
+      - Major       # Significant problem
+      - Minor       # Small issue
+      - Trivial     # Cosmetic
+    inScheme: aget:ontology/reviewer
+    cluster: Feedback Delivery
+
+  # --------------------------------------------------------------------------
+  # Concept: Approval
+  # --------------------------------------------------------------------------
+  - id: REV-006
+    uri: aget:archetype/reviewer/Approval
+    prefLabel: Approval
+    altLabel:
+      - Sign_off
+      - Acceptance
+      - Authorization
+    definition: >
+      A formal decision that an artifact meets criteria and can
+      proceed to the next stage.
+    scopeNote: >
+      Approval may be conditional (with minor fixes required) or
+      unconditional. Approval authority varies by artifact type.
+    theoreticalBasis:
+      primary: Approval Workflow
+      source: Quality Gates
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/reviewer/Review
+      - aget:archetype/reviewer/Criteria
+    enumValues:
+      - Approved            # Unconditional approval
+      - Approved_with_Fixes # Conditional approval
+      - Request_Changes     # Not approved, needs work
+      - Rejected            # Cannot proceed
+    inScheme: aget:ontology/reviewer
+    cluster: Review Process
+
+  # --------------------------------------------------------------------------
+  # Concept: Reviewer_Capacity
+  # --------------------------------------------------------------------------
+  - id: REV-007
+    uri: aget:archetype/reviewer/Reviewer_Capacity
+    prefLabel: Reviewer_Capacity
+    altLabel:
+      - Review_Bandwidth
+      - Availability
+    definition: >
+      The reviewer's ability to take on additional review work,
+      considering workload and expertise match.
+    scopeNote: >
+      Review queue management prevents bottlenecks. Expertise matching
+      improves review quality.
+    theoreticalBasis:
+      primary: Resource Management
+      source: Workflow Management
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/reviewer/Review
+    inScheme: aget:ontology/reviewer
+    cluster: Review Process
+
+# ============================================================================
+# RELATIONSHIPS
+# ============================================================================
+
+relationships:
+  - subject: aget:archetype/reviewer/Feedback
+    predicate: skos:related
+    object: aget:archetype/reviewer/Review
+    note: Review produces feedback
+
+  - subject: aget:archetype/reviewer/Approval
+    predicate: skos:related
+    object: aget:archetype/reviewer/Review
+    note: Review leads to approval decision
+
+# ============================================================================
+# METADATA
+# ============================================================================
+
+provenance:
+  project: ARC-001
+  created: 2026-02-14
+  author: private-aget-framework-AGET
+  methodology: Derived from reviewer archetype REVIEWER_SPEC.md
+
+validation:
+  conceptCount: 7
+  clusters: 2
+  theoreticalGrounding: 100%
+  skosCompliance: partial
+
+# End of ONTOLOGY_reviewer.yaml
