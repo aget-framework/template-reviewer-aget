@@ -16,6 +16,8 @@ The Reviewer archetype enforces **quality through systematic review**. Unlike ca
 
 **For evaluators**: If you need an AI that can review work products systematically and provide professional-grade feedback, the Reviewer archetype brings QA discipline to your workflow.
 
+**Domain knowledge that compounds**: Reviewer agents build persistent understanding of your quality standards — common defect patterns, team conventions, and criteria evolution. Unlike tools that start fresh each session, your agent accumulates review context that makes each assessment more calibrated and each feedback cycle more efficient.
+
 ---
 
 ## Skills
@@ -92,6 +94,7 @@ python3 -m pytest tests/ -v
 | **Feedback** | Mixed priorities | Categorized by severity |
 | **Quality gates** | Subjective feel | Pass/fail determination |
 | **Tracking** | Lost in conversation | Documented findings |
+| **Domain memory** | Starts fresh each session | Accumulates quality expertise over time |
 
 ---
 
