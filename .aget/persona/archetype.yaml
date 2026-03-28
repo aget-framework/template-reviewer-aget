@@ -25,6 +25,8 @@ archetype:
     - Must document review findings
     - Read-only for artifacts under review
 
+  governance_intensity: rigorous
+
   theoretical_basis:
     primary: Quality Management (systematic assurance)
     secondary: Peer Review (collaborative validation)
