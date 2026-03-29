@@ -85,6 +85,12 @@ When facing any substantial change or multi-step task:
 
 ---
 
+### Governance Capabilities
+
+| Attribute | Value |
+|-----------|-------|
+| Governance Intensity | Rigorous |
+
 ## Purpose
 
 > Ensure quality through systematic review and validation of artifacts and processes.
