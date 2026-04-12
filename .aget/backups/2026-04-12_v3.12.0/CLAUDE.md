@@ -1,6 +1,6 @@
 # Agent Configuration
 
-@aget-version: 3.13.0
+@aget-version: 3.12.0
 
 ## Agent Compatibility
 This configuration follows the AGENTS.md open-source standard for universal agent configuration.
@@ -14,7 +14,7 @@ Works with Claude Code, Codex CLI, Gemini CLI, and other CLI coding agents.
 This template creates reviewer agents focused on ensuring quality through systematic review and validation of artifacts and processes.
 
 ## Project Context
-template-reviewer-aget - Reviewer AGET template - v3.13.0
+template-reviewer-aget - Reviewer AGET template - v3.6.0
 
 **Note**: Update this section when instantiating template:
 - Change project name to your reviewer agent name
