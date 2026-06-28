@@ -2,7 +2,7 @@
 
 > Ensure quality through systematic artifact review and structured feedback
 
-**Version**: v3.23.1 | **Archetype**: Reviewer | **Skills**: 2 specialized + 15 universal
+**Version**: v3.24.0 | **Archetype**: Reviewer | **Skills**: 2 specialized + 15 universal
 
 ---
 
