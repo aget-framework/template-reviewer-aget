@@ -2,7 +2,7 @@
 
 > Ensure quality through systematic artifact review and structured feedback
 
-**Version**: v3.34.0 | **Archetype**: Reviewer | **Skills**: 2 specialized + 15 universal
+**Version**: v3.34.0 | **Archetype**: Reviewer | **Skills**: 40 installed; 29 required universal
 
 ---
 
@@ -116,7 +116,7 @@ Skills are provided by the template. Agents and rules directories are scaffolded
 |-----------|-------|
 | **Framework** | [AGET v3.34.0](https://github.com/aget-framework/aget) |
 | **Archetype** | Reviewer |
-| **Skills** | 17 total (2 archetype + 15 universal) |
+| **Skills** | 40 installed (29 required universal + 11 additional); see `.claude/skills/` |
 | **Ontology** | 6 concepts, 2 clusters |
 | **License** | Apache 2.0 |
 
